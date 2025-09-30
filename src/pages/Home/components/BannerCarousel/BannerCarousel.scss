@@ -1,0 +1,114 @@
+@import './../../../../Fonts.scss';
+
+.banner_carousel{
+  position: relative;
+  background: #fff;
+  max-width: 1920px;
+  margin: 0 auto;
+  
+  .content{
+    height: 600px;
+
+    .left{
+      width: 635px;
+      position: relative;
+      height: inherit;
+      
+      .content-layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        pointer-events: none;
+        height: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        
+        &.active {
+          opacity: 1;
+          pointer-events: all;
+        }
+        
+        h2{
+          color: #112A25;
+          font-family: $Montserrat !important;
+          font-weight: 400;
+          font-size: 42px;
+          line-height: 52px;
+          max-width: 460px;
+          text-transform: uppercase;
+          margin: 0 0 40px;
+
+          b{
+            font-weight: 700;
+            font-family: inherit !important;
+          }
+        }
+
+        p{
+          color: #555454;
+          font-size: 20px;
+          font-weight: 400;
+          line-height: 28px;
+          max-width: 560px;
+          margin: 0 0 40px;
+        }
+
+      }
+    }
+    .right{
+      position: absolute;
+      max-width: 950px;
+      height: 100%;
+      width: calc((100vw - 1250px)/2 + (1250px - 635px));
+      left: 635px;
+      top: 0;
+      
+      .bg-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+        
+        &.active {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .controls{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% - 20px));
+    width: 100vw;
+    max-width: 1920px;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    padding: 0 50px;
+
+    button{
+      pointer-events: all;
+      width: 30px;
+      height: 65px;
+      background: #F5F5F5;
+      min-width: 0;
+      display: flex;
+      border-radius: 30px;
+    }
+  }
+}

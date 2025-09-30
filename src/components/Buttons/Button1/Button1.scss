@@ -1,0 +1,12 @@
+@import './../../../Fonts.scss';
+
+.button1{
+  height: 48px;
+  border: 1px solid #005A45 !important;
+  color: #005A45 !important;
+  font-family: $WorkSans !important;
+  font-weight: bold !important;
+  letter-spacing: 1px;
+  padding: 0 29px !important;
+  border-radius: 50px !important;
+}
