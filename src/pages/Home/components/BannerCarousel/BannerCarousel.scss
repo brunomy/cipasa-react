@@ -78,6 +78,54 @@
         }
 
       }
+      .dots{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 30px;
+
+        .dot_content{
+          position: relative;
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          cursor: pointer;
+
+          &:before{
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #62bb46;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+          }
+        }
+        span.indicator{
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: block;
+          z-index: 1;
+          width: 30px;
+          height: 30px;
+          transition: all 0.2s ease;
+
+          &:before{
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #005a45;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+          }
+        }
+      }
     }
     .right{
       position: absolute;

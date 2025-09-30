@@ -62,6 +62,16 @@ export default function BannerCarousel() {
               }
             </Box>
           ))}
+          <Box className="dots">
+            {banners.map((banner, index) => {
+                return <Box className="dot_content"
+                  key={index}
+                  onClick={() => setCurrentBanner(index)}
+                ></Box>
+              }
+            )}
+            <span className="indicator" style={{ left: `calc(${currentBanner} * 30px)` }}></span>
+          </Box>
         </Box>
         <Box className="right">
           {banners.map((banner, index) => (
