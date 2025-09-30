@@ -2,6 +2,14 @@
 @import './Fonts.scss';
 
 body {
+  margin: 0 auto;
+
+  #root{
+    max-width: 1920px;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
   *{
     font-family: $WorkSans !important;
     box-sizing: border-box;

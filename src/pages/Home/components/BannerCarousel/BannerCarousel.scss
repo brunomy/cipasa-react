@@ -5,6 +5,24 @@
   background: #fff;
   max-width: 1920px;
   margin: 0 auto;
+  transition: all 0.5s ease;
+
+  *{
+    transition: all 0.5s ease;
+  }
+
+  &.notLoaded{
+    opacity: 0;
+    .content{
+
+      .left{
+        transform: translate(-50px, 0);
+      }
+      .right{
+        transform: translate(50px, 0);
+      }
+    }
+  }
   
   .content{
     height: 600px;

@@ -31,7 +31,7 @@ export default function Header({ ref }) {
             <Logo />
           </Button>
           <Box className="content">
-            <Button component={Link} to="/">Empreendimentos</Button>
+            <Button component={Link} to="/empreendimentos">Empreendimentos</Button>
             <Button component={Link} to="/sobre">Sobre nós</Button>
             <Button component={Link} to="/servicos">Lotes multiúso</Button>
             <Button component={Link} to="/projetos">Tenho uma área</Button>

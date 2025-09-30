@@ -1,6 +1,6 @@
 import './BannerCarousel.scss';
 import { Box, Button } from '@mui/material';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import banner1 from './images/banner1.png';
 import banner2 from './images/banner2.png';
 import banner3 from './images/banner3.png';
@@ -8,7 +8,12 @@ import { Link } from 'react-router-dom';
 import Button1 from '../../../../components/Buttons/Button1/Button1';
 
 export default function BannerCarousel() {
+  const [loaded, setLoaded] = useState(false);
   const [currentBanner, setCurrentBanner] = useState(0);
+
+  useEffect(() => {
+    setTimeout(() => setLoaded(true), 500);
+  }, []);
 
   const [banners, setBanners] = useState([
     {
@@ -38,7 +43,7 @@ export default function BannerCarousel() {
   ]);
 
   return (
-    <Box className="banner_carousel">
+    <Box className={"banner_carousel "+(loaded ? 'loaded' : 'notLoaded')}>
       <Box className="content">
         <Box className="left">
           {banners.map((banner, index) => (
