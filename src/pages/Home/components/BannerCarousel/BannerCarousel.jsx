@@ -154,7 +154,7 @@ export function SwipeListener({ onSwipeLeft, onSwipeRight }) {
         position: "absolute",
         inset: 0,
         zIndex: 5,
-        background: "transparent",
+        background: "red",
         touchAction: "none",
         pointerEvents: "auto",
       }}
