@@ -1,46 +1,44 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 export default function SwipeListener({ onSwipeLeft, onSwipeRight }) {
-  const startX = useRef(null);
-  const startY = useRef(null);
-  const isSwiping = useRef(false);
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [touchStartY, setTouchStartY] = useState(0);
+  const [isSwiping, setIsSwiping] = useState(false);
 
-  const minSwipeDistance = 50; // px mínimos
-  const maxVerticalTolerance = 30; // tolerância de scroll vertical
+  const minSwipeDistance = 50;
 
-  const onPointerDown = (e) => {
-    startX.current = e.clientX;
-    startY.current = e.clientY;
-    isSwiping.current = false;
+  const onTouchStart = (e) => {
+    setTouchStartX(e.targetTouches[0].clientX);
+    setTouchStartY(e.targetTouches[0].clientY);
+    setIsSwiping(false); // reset
   };
 
-  const onPointerMove = (e) => {
-    if (startX.current === null || startY.current === null) return;
+  const onTouchMove = (e) => {
+    const touchX = e.targetTouches[0].clientX;
+    const touchY = e.targetTouches[0].clientY;
 
-    const dx = e.clientX - startX.current;
-    const dy = e.clientY - startY.current;
+    const deltaX = touchStartX - touchX;
+    const deltaY = touchStartY - touchY;
 
-    // detecta movimento horizontal predominante
-    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dy) < maxVerticalTolerance) {
-      isSwiping.current = true;
-      e.preventDefault(); // bloqueia scroll vertical durante swipe
+    // se o movimento horizontal for maior, bloqueia o scroll vertical
+    if (Math.abs(deltaX) > Math.abs(deltaY)) {
+      setIsSwiping(true);
+      e.preventDefault(); // 🔑 impede o "tremor"
     }
   };
 
-  const onPointerUp = (e) => {
-    if (startX.current === null || startY.current === null) return;
+  const onTouchEnd = (e) => {
+    if (!isSwiping) return; // se foi vertical, deixa o scroll rolar
 
-    const dx = e.clientX - startX.current;
-    const dy = e.clientY - startY.current;
+    const touchEndX = e.changedTouches[0].clientX;
+    const deltaX = touchStartX - touchEndX;
 
-    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > minSwipeDistance) {
-      if (dx < 0 && onSwipeLeft) onSwipeLeft();
-      if (dx > 0 && onSwipeRight) onSwipeRight();
+    if (deltaX > minSwipeDistance) {
+      onSwipeLeft && onSwipeLeft();
     }
-
-    startX.current = null;
-    startY.current = null;
-    isSwiping.current = false;
+    if (deltaX < -minSwipeDistance) {
+      onSwipeRight && onSwipeRight();
+    }
   };
 
   return (
@@ -48,14 +46,13 @@ export default function SwipeListener({ onSwipeLeft, onSwipeRight }) {
       style={{
         position: "absolute",
         inset: 0,
-        zIndex: 5,
-        background: "transparent",
-        touchAction: "none",
-        pointerEvents: "auto",
+        zIndex: 1,
+        touchAction: "none", // ajuda em alguns browsers
+        background: 'red'
       }}
-      onPointerDown={onPointerDown}
-      onPointerMove={onPointerMove}
-      onPointerUp={onPointerUp}
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
     />
   );
 }
