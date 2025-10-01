@@ -135,10 +135,8 @@ function Butterfly1({ seconds }) {
     <svg 
     style={
       seconds == 8 ? {
-        transform: 'translate(30px, -40px) rotate(7deg)',
         opacity: 0.5
       } : seconds > 8 ? {
-        transform: 'translate(60px, -80px) rotate(15deg)',
         opacity: 0
       } : {transition: 'transform 0s linear'}
     } 
@@ -156,7 +154,7 @@ function Butterfly2({ seconds }) {
         transform: 'scaleX(-1) translateX(-5px) rotate(7deg)',
         opacity: 0.5
       } : seconds > 8 ? {
-        transform: 'scaleX(-1) translateX(-60px) rotate(15deg)',
+        transform: 'scaleX(-1) translateX(-60px) rotate(7deg)',
         opacity: 0
       } : {transition: 'transform 0s linear'}
     } 
