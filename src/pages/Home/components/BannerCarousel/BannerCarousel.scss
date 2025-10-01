@@ -197,14 +197,7 @@
   }
 
   @media (max-width: 1450px){
-    .controls{
-      padding: 0;
-      width: 80px;
-      left: 100vw;
-      transform: translateX(-190px);
-      top: initial;
-      bottom: 20px;
-    }
+    .controls{ display: none; }
   }
   @media (max-width: 1300px){
     .content{
@@ -241,13 +234,6 @@
           bottom: 15px;
         }
       }
-    }
-
-    .controls{
-      left: initial;
-      transform: initial;
-      right: -5px;
-      bottom: 10px;
     }
   }
   @media (max-width: 1100px){
@@ -309,14 +295,6 @@
         left: -20px;
       }
     }
-
-    .controls{
-      bottom: 410px;
-
-      button{
-        height: 55px;
-      }
-    }
   }
   @media (max-width: 600px){
     .content{
@@ -342,10 +320,6 @@
       .right{
         height: 280px;
       }
-    }
-
-    .controls{
-      display: none;
     }
   }
 }
