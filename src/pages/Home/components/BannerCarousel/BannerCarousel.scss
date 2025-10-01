@@ -7,6 +7,12 @@
   margin: 0 auto;
   transition: all 0.5s ease;
 
+  .swipe_listener{
+    width: 100vw;
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+
   *{
     transition: all 0.5s ease;
   }
@@ -138,11 +144,23 @@
         position: absolute;
         right: 92px;
         bottom: 57px;
+        transition: all 1s linear;
       }
       .butterfly2{
         position: absolute;
         right: 35px;
         bottom: 35px;
+        transition: all 1s linear;
+      }
+
+      .progress{
+        opacity: 0.5;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        background: #c6aa6e;
+
       }
     }
     .right{
@@ -184,8 +202,10 @@
     justify-content: space-between;
     pointer-events: none;
     padding: 0 50px;
+    z-index: 20;
 
     button{
+      position: relative;
       pointer-events: all;
       width: 30px;
       height: 65px;

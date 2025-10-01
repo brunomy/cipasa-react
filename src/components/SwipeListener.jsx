@@ -27,6 +27,7 @@ export default function SwipeListener({ onSwipeLeft, onSwipeRight }) {
 
   return (
     <div
+      className="swipe_listener"
       style={{
         position: "absolute",
         inset: 0,
