@@ -24,19 +24,19 @@ export default function Header({ ref }) {
   }, []);
 
   return (
-    <Box className="header" ref={ref}>
+    <header className="header" ref={ref}>
       <Box className={`header_fixed ${scrolled ? 'scrolled' : ''}`}>
         <Box className={"container" + (open ? " open" : " closed")}>
-          <Button component={Link} to="/" className="logo_content">
+          <Button onClick={() => setOpen(false)} component={Link} to="/" className="logo_content">
             <Logo />
           </Button>
           <Box className="content">
-            <Button component={Link} to="/empreendimentos">Empreendimentos</Button>
-            <Button component={Link} to="/sobre">Sobre nós</Button>
-            <Button component={Link} to="/servicos">Lotes multiúso</Button>
-            <Button component={Link} to="/projetos">Tenho uma área</Button>
-            <Button component={Link} to="/contato">R.I</Button>
-            <Button component={Link} to="/contato">Contato</Button>
+            <Button onClick={() => setOpen(false)} component={Link} to="/empreendimentos">Empreendimentos</Button>
+            <Button onClick={() => setOpen(false)} component={Link} to="/sobre">Sobre nós</Button>
+            <Button onClick={() => setOpen(false)} component={Link} to="/servicos">Lotes multiúso</Button>
+            <Button onClick={() => setOpen(false)} component={Link} to="/projetos">Tenho uma área</Button>
+            <Button onClick={() => setOpen(false)} component={Link} to="/contato">T.I</Button>
+            <Button onClick={() => setOpen(false)} component={Link} to="/contato">Contato</Button>
             <PortalButton />
           </Box>
           <Button className="menu" onClick={() => setOpen(!open)}>
@@ -44,7 +44,7 @@ export default function Header({ ref }) {
           </Button>
         </Box>
       </Box>
-    </Box>
+    </header>
   );
 }
 
@@ -77,8 +77,9 @@ function PortalButton() {
       </Button>
 
       <Box className={`portal_dropdown ${open ? 'open' : 'closed'}`}>
-        <Button onClick={() => setOpen(false)} component={Link} to="/login">Login</Button>
-        <Button onClick={() => setOpen(false)} component={Link} to="/register">Registre-se</Button>
+        <Button onClick={() => setOpen(false)} component={Link} to="/cliente">Cliente</Button>
+        <Button onClick={() => setOpen(false)} component={Link} to="/parceiro">Parceiro</Button>
+        <Button onClick={() => setOpen(false)} component={Link} to="/corretor">Corretor</Button>
       </Box>
     </Box>
   );
