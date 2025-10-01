@@ -1,44 +1,28 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 
 export default function SwipeListener({ onSwipeLeft, onSwipeRight }) {
-  const [touchStartX, setTouchStartX] = useState(0);
-  const [touchStartY, setTouchStartY] = useState(0);
-  const [isSwiping, setIsSwiping] = useState(false);
+  const startX = useRef(null);
+  const startY = useRef(null);
 
-  const minSwipeDistance = 50;
+  const minSwipeDistance = 50; // px mínimos para swipe
 
-  const onTouchStart = (e) => {
-    setTouchStartX(e.targetTouches[0].clientX);
-    setTouchStartY(e.targetTouches[0].clientY);
-    setIsSwiping(false); // reset
+  const onPointerDown = (e) => {
+    startX.current = e.clientX;
+    startY.current = e.clientY;
   };
 
-  const onTouchMove = (e) => {
-    const touchX = e.targetTouches[0].clientX;
-    const touchY = e.targetTouches[0].clientY;
+  const onPointerUp = (e) => {
+    if (startX.current === null || startY.current === null) return;
 
-    const deltaX = touchStartX - touchX;
-    const deltaY = touchStartY - touchY;
+    const dx = e.clientX - startX.current;
 
-    // se o movimento horizontal for maior, bloqueia o scroll vertical
-    if (Math.abs(deltaX) > Math.abs(deltaY)) {
-      setIsSwiping(true);
-      e.preventDefault(); // 🔑 impede o "tremor"
+    if (Math.abs(dx) > minSwipeDistance) {
+      if (dx < 0 && onSwipeLeft) onSwipeLeft();
+      if (dx > 0 && onSwipeRight) onSwipeRight();
     }
-  };
 
-  const onTouchEnd = (e) => {
-    if (!isSwiping) return; // se foi vertical, deixa o scroll rolar
-
-    const touchEndX = e.changedTouches[0].clientX;
-    const deltaX = touchStartX - touchEndX;
-
-    if (deltaX > minSwipeDistance) {
-      onSwipeLeft && onSwipeLeft();
-    }
-    if (deltaX < -minSwipeDistance) {
-      onSwipeRight && onSwipeRight();
-    }
+    startX.current = null;
+    startY.current = null;
   };
 
   return (
@@ -47,12 +31,10 @@ export default function SwipeListener({ onSwipeLeft, onSwipeRight }) {
         position: "absolute",
         inset: 0,
         zIndex: 1,
-        touchAction: "none", // ajuda em alguns browsers
-        background: 'red'
+        touchAction: "pan-y", // permite scroll vertical normalmente
       }}
-      onTouchStart={onTouchStart}
-      onTouchMove={onTouchMove}
-      onTouchEnd={onTouchEnd}
+      onPointerDown={onPointerDown}
+      onPointerUp={onPointerUp}
     />
   );
 }
