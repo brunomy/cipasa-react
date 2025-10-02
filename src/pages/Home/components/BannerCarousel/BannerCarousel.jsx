@@ -73,7 +73,7 @@ export default function BannerCarousel() {
         <Box className="left">
           {banners.map((banner, index) => (
             <Box
-              key={index}
+              key={"banner-"+index}
               className={`content-layer ${index === currentBanner ? 'active' : ''}`}
             >
               <h2 dangerouslySetInnerHTML={{ __html: banner.title }} />
@@ -98,12 +98,13 @@ export default function BannerCarousel() {
         <Box className="right">
           {banners.map((banner, index) => (
             <Box
-              key={index}
+              key={"bannerImage-"+index}
               className={`bg-image ${index === currentBanner ? 'active' : ''}`}
               style={{ backgroundImage: `url(${banner.image})` }}
             />
           ))}
         </Box>
+        
         <SwipeListener
           onSwipeLeft={next}
           onSwipeRight={prev}
@@ -120,8 +121,6 @@ export default function BannerCarousel() {
     </Box>
   );
 }
-
-
 
 function Butterfly1({ seconds }) {
   return (
