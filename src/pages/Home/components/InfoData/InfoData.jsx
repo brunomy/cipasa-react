@@ -75,7 +75,7 @@ export default function InfoData() {
   }, [hasAnimated]);
 
   return (
-    <Box className={"info_data"+(hasAnimated ? " animated" : "")}>
+    <Box component="section" className={"info_data"+(hasAnimated ? " animated" : "")}>
       <Box className="container">
         <Box className="top">
           <Box className="item" ref={componentRef}>

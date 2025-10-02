@@ -57,7 +57,7 @@ export default function Highlights() {
   
 
   return (
-    <Box className={"highlights "+(loaded ? 'loaded' : 'notLoaded')}>
+    <Box component="section" className={"highlights "+(loaded ? 'loaded' : 'notLoaded')}>
       <Box className="content">
         <Carousel list={list} Component={Item} current={current} setCurrent={setCurrent}  />
         <Box className="arrows">

@@ -68,7 +68,7 @@ export default function BannerCarousel() {
   }, [currentBanner]);
 
   return (
-    <Box className={"banner_carousel "+(loaded ? 'loaded' : 'notLoaded')}>
+    <Box component="section" className={"banner_carousel "+(loaded ? 'loaded' : 'notLoaded')}>
       <Box className="content">
         <Box className="left">
           {banners.map((banner, index) => (
