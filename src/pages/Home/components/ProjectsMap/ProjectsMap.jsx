@@ -60,7 +60,7 @@ function BrazilMap() {
         <Button className="RO" component={Link} to="/"><IconLogo /></Button>
         <Button className="AC" component={Link} to="/"><IconLogo /></Button>
         <Button className="AM" component={Link} to="/"><IconLogo /></Button>
-        <Button className="PR" component={Link} to="/"><IconLogo /></Button>
+        <Button className="RR" component={Link} to="/"><IconLogo /></Button>
         <Button className="PA" component={Link} to="/"><IconLogo /></Button>
         <Button className="AP" component={Link} to="/"><IconLogo /></Button>
         <Button className="TO" component={Link} to="/"><IconLogo /></Button>
