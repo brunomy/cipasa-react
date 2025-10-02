@@ -1,5 +1,5 @@
 
-@import './Fonts.scss';
+@use './Fonts.scss' as fonts;
 
 body {
   margin: 0 auto;
@@ -15,7 +15,7 @@ body {
   }
 
   *{
-    font-family: $WorkSans !important;
+    font-family: fonts.$WorkSans !important;
     box-sizing: border-box;
   }
 }
