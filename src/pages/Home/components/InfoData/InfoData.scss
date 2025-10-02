@@ -167,7 +167,9 @@
           color: #555454;
           margin: 0 0 30px;
         }
-        button{}
+        button, a{
+          background: #fff;
+        }
       }
     }
   }
@@ -256,9 +258,6 @@
         .item{
           gap: 15px;
 
-          .icon{
-            img{}
-          }
           .text{
             width: 130px;
 
@@ -284,7 +283,6 @@
             font-size: 14px;
             line-height: 21px;
           }
-          button{}
         }
       }
     }

@@ -7,6 +7,7 @@ import banner3 from './images/banner3.png';
 import { Link } from 'react-router-dom';
 import Button1 from '../../../../components/Buttons/Button1/Button1';
 import SwipeListener from '../../../../components/SwipeListener';
+import Dots from '../../../../components/Dots/Dots';
 
 export default function BannerCarousel() {
   const [loaded, setLoaded] = useState(false);
@@ -86,16 +87,8 @@ export default function BannerCarousel() {
               }
             </Box>
           ))}
-          <Box className="dots">
-            {banners.map((banner, index) => {
-                return <Box className="dot_content"
-                  key={index}
-                  onClick={() => setCurrentBanner(index)}
-                ></Box>
-              }
-            )}
-            <span className="indicator" style={{ left: `calc(${currentBanner} * 30px)` }}></span>
-          </Box>
+   
+          <Dots array={banners} activeIndex={currentBanner} setFunction={setCurrentBanner} />
 
           <Butterfly1 seconds={seconds} />
           <Butterfly2 seconds={seconds} />
