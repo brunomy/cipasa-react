@@ -1,6 +1,7 @@
 import BannerCarousel from './components/BannerCarousel/BannerCarousel';
 import Highlights from './components/Highlights/Highlights';
 import InfoData from './components/InfoData/InfoData';
+import Projects from './components/Projects/Projects';
 import ProjectsMap from './components/ProjectsMap/ProjectsMap';
 import './Home.scss';
 import { Box } from '@mui/material';
@@ -12,6 +13,7 @@ export default function Home() {
       <InfoData />
       <Highlights />
       <ProjectsMap />
+      <Projects />
     </Box>
   );
 }

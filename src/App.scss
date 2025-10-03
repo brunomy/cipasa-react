@@ -25,3 +25,10 @@ body {
   max-width: 1250px;
   margin: 0 auto;
 }
+
+.swiper-pagination-bullet{
+  width: 10px !important;
+  height: 10px !important;
+  background: #C6A557 !important;
+  margin: 0 10px !important;
+}
