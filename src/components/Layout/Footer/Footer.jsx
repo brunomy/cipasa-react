@@ -39,7 +39,7 @@ export default function Footer({ ref }) {
                 <Button component={Link} to="/servicos">Sobre nós</Button>
                 <Button component={Link} to="/contato">Lotes multúso</Button>
                 <Button component={Link} to="/contato">Tenho uma área </Button>
-                <Button component={Link} to="/contato">T.I</Button>
+                <Button component={Link} to="/contato">R.I</Button>
                 <Button component={Link} to="/contato">Contato</Button>
               </Box>
               <Box className="has_in_menu">

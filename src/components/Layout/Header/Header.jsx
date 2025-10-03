@@ -35,7 +35,7 @@ export default function Header({ ref }) {
             <Button onClick={() => setOpen(false)} component={Link} to="/sobre">Sobre nós</Button>
             <Button onClick={() => setOpen(false)} component={Link} to="/servicos">Lotes multiúso</Button>
             <Button onClick={() => setOpen(false)} component={Link} to="/projetos">Tenho uma área</Button>
-            <Button onClick={() => setOpen(false)} component={Link} to="/contato">T.I</Button>
+            <Button onClick={() => setOpen(false)} component={Link} to="/contato">R.I</Button>
             <Button onClick={() => setOpen(false)} component={Link} to="/contato">Contato</Button>
             <PortalButton />
           </Box>
