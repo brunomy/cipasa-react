@@ -1,4 +1,4 @@
-@use './../../../../Fonts.scss' as fonts;
+@use './../../../../Mixins.scss' as mixins;
 
 .projects{
   position: relative;
@@ -19,19 +19,11 @@
     justify-content: space-between;
 
     .left{
-      width: calc(100% - 20px - 330px);
+      width: calc(100% - 42px - 310px);
 
       .swiper{
         padding: 0px 0 45px 20px;
         margin: 0 0 0 -20px;
-
-        .swiper-slide {
-          height: auto !important;
-  
-          >div{
-            height: 100%;
-          }
-        }
       }
 
       .item{
@@ -87,13 +79,7 @@
       padding: 100px 0 0;
 
       h2{
-        font-family: fonts.$Montserrat !important;
-        font-weight: 400;
-        font-size: 42px;
-        line-height: 50px;
-        margin: 0;
-
-        b{ font-weight: bold; }
+        @include mixins.Title();
       }
       img{
         position: absolute;
@@ -110,11 +96,6 @@
       }
       .right{
         width: 260px;
-
-        h2{
-          font-size: 34px;
-          line-height: 42px;
-        }
       }
     }
   }
@@ -153,8 +134,6 @@
         padding: 0;
 
         h2{
-          font-size: 30px;
-          line-height: 37px;
           margin: 0 0 10px;
         }
         img{
@@ -169,10 +148,6 @@
   @media (max-width: 550px){
     .container{
       .right{
-        h2{
-          font-size: 24px;
-          line-height: 29px;
-        }
         img{
           left: initial;
           right: -110px;

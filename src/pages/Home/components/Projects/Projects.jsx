@@ -4,7 +4,7 @@ import { Box, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay, FreeMode } from 'swiper/modules';
+import { Pagination  } from 'swiper/modules';
 
 import icon from './icons/icon.svg';
 
@@ -28,14 +28,13 @@ export default function Projects() {
   ]);
 
   return (
-    <Box className="projects">
+    <Box component="section" className="projects">
       <Box className="container">
         <Box className="left">
             <Swiper
               modules={[Pagination]}
               freeMode={true}
               slidesPerView={'auto'}
-              // spaceBetween={16}
               pagination={{ clickable: true }}
             >
              

@@ -1,4 +1,4 @@
-@use './../../../../Fonts.scss' as fonts;
+@use './../../../../Mixins.scss' as mixins;
 
 .projects_map{
   position: relative;
@@ -20,22 +20,11 @@
       max-width: 535px;
 
       h2{
-        font-family: fonts.$Montserrat !important;
-        font-weight: 400;
-        font-size: 42px;
-        line-height: 50px;
+        @include mixins.Title();
         margin: 0 0 90px;
-        color: #112A25;
-
-        *{
-          font-family: fonts.$Montserrat !important;
-
-        }
       }
       p{
-        color: #555454;
-        font-size: 18px;
-        line-height: 27px;
+        @include mixins.Text();
         margin: 0 0 40px;
       }
       .selectors{
@@ -66,8 +55,6 @@
         max-width: 425px;
 
         h2{
-          font-size: 34px;
-          line-height: 42px;
           margin: 0 0 50px;
         }
       }
@@ -82,8 +69,6 @@
         margin: 0 0 30px;
 
         h2{
-          font-size: 30px;
-          line-height: 37px;
           margin: 0 0 20px;
         }
       }
@@ -99,15 +84,8 @@
       .left{
         margin: 0 auto 40px;
 
-        h2{
-          font-size: 24px;
-          line-height: 29px;
-        }
         p{
-          font-size: 14px;
-          line-height: 23px;
           margin: 0 0 25px;
-
         }
         .selectors{
           flex-direction: column;
@@ -116,8 +94,6 @@
             width: 100%;
           }
         }
-      }
-      .right{
       }
     }
   }

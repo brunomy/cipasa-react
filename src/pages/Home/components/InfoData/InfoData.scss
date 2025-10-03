@@ -1,4 +1,5 @@
 @use './../../../../Fonts.scss' as fonts;
+@use './../../../../Mixins.scss' as mixins;
 
 .info_data{
   position: relative;
@@ -145,17 +146,9 @@
       }
 
       h2{
+        @include mixins.Title();
         width: 465px;
-        font-family: fonts.$Montserrat !important;
-        font-weight: 400;
-        font-size: 42px;
-        line-height: 50px;
-        color: #112A25;
         margin: 0;
-
-        *{
-          font-family: fonts.$Montserrat !important;
-        }
       }
       >div{
         width: 600px;
@@ -186,17 +179,13 @@
         }
       }
       .bottom{
-        h2{
-          font-size: 36px;
-          line-height: 42px;
-        }
         >div{
           max-width: calc(100% - 440px);
         }
       }
     }
   }
-  @media (max-width: 950px){
+  @media (max-width: 850px){
     padding: 20px 0 70px;
 
     .container{
@@ -242,8 +231,6 @@
         
         h2{
           width: 100%;
-          font-size: 33px;
-          line-height: 38px;
         }
         >div{
           width: 100%;
@@ -252,7 +239,7 @@
       }
     }
   }
-  @media (max-width: 600px){
+  @media (max-width: 550px){
     .container{
       .top{
         .item{
@@ -272,10 +259,6 @@
         }
       }
       .bottom{
-        h2{
-          font-size: 24px;
-          line-height: 29px;
-        }
         >div{
           p{
             font-size: 14px;

@@ -58,7 +58,7 @@ export default function Highlights() {
 
   return (
     <Box component="section" className={"highlights "+(loaded ? 'loaded' : 'notLoaded')}>
-      <Box className="content">
+      <Box className="container">
         <Carousel list={list} Component={Item} current={current} setCurrent={setCurrent}  />
         <Box className="arrows">
           <Button className="prev" onClick={prev}><img src={arrow_carousel} alt="" /></Button>

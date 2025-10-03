@@ -32,3 +32,16 @@ body {
   background: #C6A557 !important;
   margin: 0 10px !important;
 }
+
+.swiper{
+
+  padding-bottom: 45px;
+
+  .swiper-slide {
+    height: auto !important;
+
+    >div{
+      height: 100%;
+    }
+  }
+}
