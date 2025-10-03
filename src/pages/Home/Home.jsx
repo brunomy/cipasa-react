@@ -1,4 +1,5 @@
 import BannerCarousel from './components/BannerCarousel/BannerCarousel';
+import { ContactBanner } from './components/ContactBanner/ContactBanner';
 import Highlights from './components/Highlights/Highlights';
 import InfoData from './components/InfoData/InfoData';
 import Projects from './components/Projects/Projects';
@@ -16,6 +17,7 @@ export default function Home() {
       <ProjectsMap />
       <Projects />
       <Ventures />
+      <ContactBanner />
     </Box>
   );
 }
