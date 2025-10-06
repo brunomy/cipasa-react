@@ -2,10 +2,11 @@ import { Box } from "@mui/material";
 import { useState, useEffect, useRef } from "react";
 import './Carousel.scss';
 
-export default function Carousel({ list, Component, current, setCurrent, width = '100%', height = '100%' }) {
+export default function Carousel({ list, Component, current, setCurrent, width = '100%', height = '100%', autoplay = true }) {
   const [seconds, setSeconds] = useState(0);
 
   useEffect(() => {
+    if(!autoplay) return;
     const interval = setInterval(() => {
       setSeconds(seconds + 1);
       if (seconds >= 10) {

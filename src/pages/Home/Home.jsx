@@ -6,7 +6,6 @@ import InfoData from './components/InfoData/InfoData';
 import Projects from './components/Projects/Projects';
 import ProjectsMap from './components/ProjectsMap/ProjectsMap';
 import Ventures from './components/Ventures/Ventures';
-import './Home.scss';
 import { Box } from '@mui/material';
 
 export default function Home() {

@@ -40,7 +40,7 @@ export default function Ventures() {
 
   return (
     <Box className="ventures" component="section">
-      <Box className="container">
+      <Box className="content">
         <Box className="left">
           <h2>
             Espaços para <br/>

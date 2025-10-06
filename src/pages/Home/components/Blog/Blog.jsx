@@ -35,8 +35,8 @@ export default function Blog() {
   ]);
 
   return (
-    <Box className="blog_home">
-      <Box className="container">
+    <Box className="blog_home" component="section">
+      <Box className="content">
         <h2>Cipasa na mídia</h2>
         <Swiper
           className="swiper_content"

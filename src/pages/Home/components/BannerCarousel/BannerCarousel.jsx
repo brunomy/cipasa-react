@@ -122,7 +122,7 @@ export default function BannerCarousel() {
   );
 }
 
-function Butterfly1({ seconds }) {
+export function Butterfly1({ seconds }) {
   return (
     <svg 
     style={
@@ -138,7 +138,7 @@ function Butterfly1({ seconds }) {
   )
 }
 
-function Butterfly2({ seconds }) {
+export function Butterfly2({ seconds }) {
   return (
     <svg 
       style={

@@ -29,7 +29,7 @@ export default function Projects() {
 
   return (
     <Box component="section" className="projects">
-      <Box className="container">
+      <Box className="content">
         <Box className="left">
             <Swiper
               modules={[Pagination]}

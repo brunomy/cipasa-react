@@ -53,13 +53,10 @@ export default function Highlights() {
     setCurrent((current - 1 + list.length) % list.length)
   }
 
-  // console.log(list);
-  
-
   return (
     <Box component="section" className={"highlights "+(loaded ? 'loaded' : 'notLoaded')}>
-      <Box className="container">
-        <Carousel list={list} Component={Item} current={current} setCurrent={setCurrent}  />
+      <Box className="content">
+        <Carousel list={list} Component={Item} current={current} setCurrent={setCurrent} autoplay={false} />
         <Box className="arrows">
           <Button className="prev" onClick={prev}><img src={arrow_carousel} alt="" /></Button>
           <Button className="next" onClick={next}><img src={arrow_carousel} alt="" /></Button>

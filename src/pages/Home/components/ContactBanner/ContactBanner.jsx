@@ -11,7 +11,7 @@ export function ContactBanner() {
 
   return (
     <Box className="contact_banner" component="section">
-      <Box className="container">
+      <Box className="content">
         <Box className="left">
           <Box className="image">
             <img src={banner} />

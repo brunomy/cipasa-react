@@ -3,7 +3,7 @@
 .highlights{
   padding: 100px 0 50px;
 
-  .container{
+  .content{
     position: relative;
 
     .carousel_component{
@@ -128,7 +128,7 @@
   @media (max-width: 1100px){
     padding: 70px 0 50px;
 
-    .container{
+    .content{
       .carousel_component{
         .item{
           h2{
@@ -152,7 +152,7 @@
     }
   }
   @media (max-width: 850px){
-    .container{
+    .content{
       .carousel_component{
         .item{
           .dados{
@@ -171,7 +171,7 @@
   @media (max-width: 550px){
     padding: 50px 0 50px;
 
-    .container{
+    .content{
       .carousel_component{
         .item{
           .dados{
