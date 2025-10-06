@@ -3,6 +3,7 @@ import AboutHeader from './components/AboutHeader/AboutHeader';
 import AboutData from './components/AboutData/AboutData';
 import MissionVisionValues from './components/MissionVisionValues/MissionVisionValues';
 import AboutVentures from './components/AboutVentures/AboutVentures';
+import Sustainability from './components/Sustainability/Sustainability';
 
 export default function AboutUs() {
   return (
@@ -11,6 +12,7 @@ export default function AboutUs() {
       <AboutData />
       <MissionVisionValues />
       <AboutVentures />
+      <Sustainability />
     </Box>
   );
 }
