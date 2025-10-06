@@ -3,6 +3,8 @@ import { Butterfly1, Butterfly2 } from '../../../Home/components/BannerCarousel/
 import './AboutHeader.scss';
 import { Box } from '@mui/material';
 
+import banner from './images/banner[1920x400].png';
+
 export default function AboutHeader() {
   return (
     <Box className="about_header">
@@ -20,6 +22,11 @@ export default function AboutHeader() {
               Durante esses anos, a Cipasa ganhou destaque pela sua capacidade técnica e solidez. Baseada nas premissas de valorizar as pessoas e agir de maneira ética e sustentável, tem como objetivo tornar-se uma referência no mercado imobiliário brasileiro e uma marca desejada por todos seus stakeholders.
             </p>
           </Box>
+        </Box>
+      </Box>
+      <Box className="banner">
+        <Box className="image">
+          <img src={banner} />
         </Box>
       </Box>
     </Box>
