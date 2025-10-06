@@ -1,4 +1,5 @@
 import BannerCarousel from './components/BannerCarousel/BannerCarousel';
+import Blog from './components/Blog/Blog';
 import { ContactBanner } from './components/ContactBanner/ContactBanner';
 import Highlights from './components/Highlights/Highlights';
 import InfoData from './components/InfoData/InfoData';
@@ -18,6 +19,7 @@ export default function Home() {
       <Projects />
       <Ventures />
       <ContactBanner />
+      <Blog />
     </Box>
   );
 }
