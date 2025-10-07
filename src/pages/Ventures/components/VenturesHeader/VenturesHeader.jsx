@@ -7,7 +7,7 @@ import TitleBreadcrumbs from '../../../../components/TitleBreadcrumbs/TitleBread
 
 export default function VenturesHeader() {
   return (
-    <Box className="ventures_header">
+    <Box className="ventures_header" component="section">
       <Box className="content">
         <Box className="left">
           <TitleBreadcrumbs title={<>Nossos <b>Empreendimentos</b></>} breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Nossos Empreendimentos' }]} />
@@ -77,10 +77,9 @@ function Filter() {
       </Box>
       <Box className={"dropdown " + (filterOpen ? 'open' : '')}>
         {
-          (filter.status || filter.state) && (<Button className="clear" onClick={() => setFilter({ status: null, state: null })}>Limpar</Button>)
+          (filter.status || filter.state) && (<Button className="clear" onClick={() => { setFilter({ status: null, state: null }); setFilterOpen(false); }}>Limpar</Button>)
         }
         
-
         <Box className="item">
           <Autocomplete
             disablePortal
