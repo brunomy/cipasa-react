@@ -7,6 +7,7 @@ import Home from './pages/Home/Home'
 import { Route, Routes } from 'react-router-dom'
 import AboutUs from './pages/AboutUs/AboutUs'
 import Ventures from './pages/Ventures/Ventures'
+import Venture from './pages/Venture/Venture'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/sobre" element={<AboutUs />} />
         <Route path="/empreendimentos" element={<Ventures />} />
+        <Route path="/empreendimento/:id/:nome" element={<Venture />} />
       </Routes>
     </Layout>
   )

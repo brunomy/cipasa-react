@@ -71,7 +71,7 @@ export default function VenturesList() {
 export function VentureItem({ item, key }) {
   return (
     <Box className="venture_item" key={key}>
-      <Button component={Link} to={`/ventures/${item.id}`} className="image">
+      <Button component={Link} to={`/empreendimento/${item.id}/${item.title}`} className="image">
         <img src={item.image} alt={item.title} />
         <Box className="logo">
           <img src={item.logo} alt="" />

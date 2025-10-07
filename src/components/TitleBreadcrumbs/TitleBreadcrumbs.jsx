@@ -9,8 +9,8 @@ export default function TitleBreadcrumbs({ title, breadcrumbs }) {
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
           {breadcrumbs.map((crumb, index) => (
-            <li key={index} className={`breadcrumb-item${index === breadcrumbs.length - 1 ? ' active' : ''}`}>
-              {index === breadcrumbs.length - 1 ? (
+            <li key={index} className={`breadcrumb-item${crumb.href ? '' : ' disabled'}`}>
+              {!crumb.href ? (
                 crumb.label
               ) : (
                 <Button component={Link} to={crumb.href}>{crumb.label}</Button>

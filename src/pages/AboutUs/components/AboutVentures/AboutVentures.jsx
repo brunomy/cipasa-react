@@ -27,9 +27,6 @@ export default function AboutVentures() {
     { image: img4, logo: logo4, url: '/teste'}
   ]);
 
-  console.log(items);
-  
-
   return (
     <Box className="about_ventures" component="section">
       <Box className="content">
