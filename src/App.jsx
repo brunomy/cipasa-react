@@ -6,6 +6,7 @@ import { Box } from '@mui/material'
 import Home from './pages/Home/Home'
 import { Route, Routes } from 'react-router-dom'
 import AboutUs from './pages/AboutUs/AboutUs'
+import Ventures from './pages/Ventures/Ventures'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sobre" element={<AboutUs />} />
+        <Route path="/empreendimentos" element={<Ventures />} />
       </Routes>
     </Layout>
   )

@@ -41,3 +41,37 @@
     line-height: 23px;
   }
 }
+
+@mixin AutocompleteInput{
+  width: 100%;
+
+  .MuiInputBase-root{
+    height: 42px;
+    background: #005A45;
+    border-radius: 50px;
+    color: #fff;
+
+    *{
+      color: #fff;
+    }
+
+    .MuiInputBase-input{
+      padding: 10px;
+      font-size: 14px;
+      line-height: 21px;
+      
+      &::placeholder{
+        color: #fff;
+        opacity: 1;
+      }
+    }
+    .MuiAutocomplete-endAdornment{
+      right: 10px;
+      
+      .MuiSvgIcon-root{
+        font-size: 20px;
+        color: #112A25;
+      }
+    }
+  }
+}

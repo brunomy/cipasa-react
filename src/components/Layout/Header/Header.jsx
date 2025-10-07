@@ -1,7 +1,7 @@
 import Logo from '../../Logo/Logo';
 import './Header.scss';
 import { Box, Button } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import portal_icon from './../../../assets/icons/portal_icon.svg';
 import bottom_arrow from './../../../assets/icons/bottom_arrow.svg';
@@ -23,6 +23,10 @@ export default function Header({ ref }) {
     };
   }, []);
 
+  const location = useLocation();
+
+  const isActive = (path) => location.pathname === path;
+
   return (
     <header className="header" ref={ref}>
       <Box className={`header_fixed ${scrolled ? 'scrolled' : ''}`}>
@@ -31,12 +35,12 @@ export default function Header({ ref }) {
             <Logo />
           </Button>
           <Box className="content">
-            <Button onClick={() => setOpen(false)} component={Link} to="/empreendimentos">Empreendimentos</Button>
-            <Button onClick={() => setOpen(false)} component={Link} to="/sobre">Sobre nós</Button>
-            <Button onClick={() => setOpen(false)} component={Link} to="/servicos">Lotes multiúso</Button>
-            <Button onClick={() => setOpen(false)} component={Link} to="/projetos">Tenho uma área</Button>
-            <Button onClick={() => setOpen(false)} component={Link} to="/contato">R.I</Button>
-            <Button onClick={() => setOpen(false)} component={Link} to="/contato">Contato</Button>
+            <Button onClick={() => setOpen(false)} component={Link} className={isActive('/empreendimentos') ? 'active' : ''} to="/empreendimentos">Empreendimentos</Button>
+            <Button onClick={() => setOpen(false)} component={Link} className={isActive('/sobre') ? 'active' : ''} to="/sobre">Sobre nós</Button>
+            <Button onClick={() => setOpen(false)} component={Link} className={isActive('/lotes-multiuso') ? 'active' : ''} to="/lotes-multiuso">Lotes multiúso</Button>
+            <Button onClick={() => setOpen(false)} component={Link} className={isActive('/tenho-uma-area') ? 'active' : ''} to="/tenho-uma-area">Tenho uma área</Button>
+            <Button onClick={() => setOpen(false)} component={Link} className={isActive('/ri') ? 'active' : ''} to="/ri">R.I</Button>
+            <Button onClick={() => setOpen(false)} component={Link} className={isActive('/contato') ? 'active' : ''} to="/contato">Contato</Button>
             <PortalButton />
           </Box>
           <Button className="menu" onClick={() => setOpen(!open)}>

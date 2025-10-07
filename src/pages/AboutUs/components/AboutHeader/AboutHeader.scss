@@ -1,6 +1,18 @@
 .about_header{
+  position: relative;
   padding: 80px 0 0;
-  border-top: 1px solid #F5F5F5;
+
+  &::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    max-width: 1920px;
+    height: 1px;
+    background-color: #F5F5F5;
+  }
 
   .content{
     display: flex;
