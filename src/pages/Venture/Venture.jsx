@@ -4,6 +4,7 @@ import VentureHeader from './components/VentureHeader/VentureHeader';
 import VentureInfo from './components/VentureInfo/VentureInfo';
 import VentureGalery from './components/VentureGalery/VentureGalery';
 import VentureDifferences from './components/VentureDifferences/VentureDifferences';
+import VentureStatus from './components/VentureStatus/VentureStatus';
 
 export default function Venture() {
   return (
@@ -13,6 +14,7 @@ export default function Venture() {
         <VentureInfo />
         <VentureGalery />
         <VentureDifferences />
+        <VentureStatus />
       </Box>
     </Box>
   )
