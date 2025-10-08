@@ -3,6 +3,7 @@ import { Box } from '@mui/material';
 import VentureHeader from './components/VentureHeader/VentureHeader';
 import VentureInfo from './components/VentureInfo/VentureInfo';
 import VentureGalery from './components/VentureGalery/VentureGalery';
+import VentureDifferences from './components/VentureDifferences/VentureDifferences';
 
 export default function Venture() {
   return (
@@ -11,6 +12,7 @@ export default function Venture() {
         <VentureHeader />
         <VentureInfo />
         <VentureGalery />
+        <VentureDifferences />
       </Box>
     </Box>
   )

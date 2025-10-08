@@ -19,6 +19,7 @@ import img9 from './images/img9[900x450].png';
 import img10 from './images/img10[900x450].png';
 import img11 from './images/img11[900x450].png';
 import img12 from './images/img12[900x450].png';
+import ButtonFilter from '../../../../components/Buttons/ButtonFilter/ButtonFilter';
 
 export default function VentureGalery() {
   const swiperRef = useRef(null);
@@ -65,11 +66,11 @@ export default function VentureGalery() {
         <Box className="left">
           <h2>Imagens</h2>
           <Box className="filters">
-            <Button className={selectedGalery === null ? 'active' : ''} onClick={() => setSelectedGalery(null)}>Todas</Button>
+            <ButtonFilter isActive={selectedGalery === null} onClick={() => setSelectedGalery(null)}>Todas</ButtonFilter>
             {uniqueGaleries.map(galery => (
-              <Button key={galery.id_galery} className={selectedGalery === galery.id_galery ? 'active' : ''} onClick={() => setSelectedGalery(galery.id_galery)}>
+              <ButtonFilter key={galery.id_galery} isActive={selectedGalery === galery.id_galery} onClick={() => setSelectedGalery(galery.id_galery)}>
                 {galery.name_galery}
-              </Button>
+              </ButtonFilter>
             ))}
           </Box>
         </Box>
