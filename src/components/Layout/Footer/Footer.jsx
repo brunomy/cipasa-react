@@ -18,7 +18,7 @@ export default function Footer({ ref }) {
         <Box className="container">
           <Box className="left">
             <Box className="logo_content"><Logo /></Box>
-            <p>Edifício Ministro Jesuíno Cardoso Rua Ministro Jesuíno Cardoso, 633 10º andar, Sala 102 | Vila Olímpia CEP: 04544-051 São Paulo | SP</p>
+            <p>Edifício Ministro Jesuíno Cardoso Rua Ministro Jesuíno Cardoso, 633 10º andar, Sala 102 | Vila Olímpia CEP: 04544-051 São Paulo | SP</p>
             <Box className="contato">
               <Box className="item">
                 <p>Entre em contato - São Paulo</p>
@@ -37,7 +37,6 @@ export default function Footer({ ref }) {
                 <h4>Mapa do site</h4>
                 <Button component={Link} to="/sobre">Empreendimentos</Button>
                 <Button component={Link} to="/servicos">Sobre nós</Button>
-                <Button component={Link} to="/contato">Lotes multúso</Button>
                 <Button component={Link} to="/contato">Tenho uma área </Button>
                 <Button component={Link} to="/contato">R.I</Button>
                 <Button component={Link} to="/contato">Contato</Button>

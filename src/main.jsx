@@ -17,6 +17,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+import 'leaflet/dist/leaflet.css';
+
 import './index.css'
 import App from './App.jsx'
 

@@ -37,7 +37,6 @@ export default function Header({ ref }) {
           <Box className="content">
             <Button onClick={() => setOpen(false)} component={Link} className={isActive('/empreendimentos') || isActive('/empreendimento') ? 'active' : ''} to="/empreendimentos">Empreendimentos</Button>
             <Button onClick={() => setOpen(false)} component={Link} className={isActive('/sobre') ? 'active' : ''} to="/sobre">Sobre nós</Button>
-            <Button onClick={() => setOpen(false)} component={Link} className={isActive('/lotes-multiuso') ? 'active' : ''} to="/lotes-multiuso">Lotes multiúso</Button>
             <Button onClick={() => setOpen(false)} component={Link} className={isActive('/tenho-uma-area') ? 'active' : ''} to="/tenho-uma-area">Tenho uma área</Button>
             <Button onClick={() => setOpen(false)} component={Link} className={isActive('/ri') ? 'active' : ''} to="/ri">R.I</Button>
             <Button onClick={() => setOpen(false)} component={Link} className={isActive('/contato') ? 'active' : ''} to="/contato">Contato</Button>

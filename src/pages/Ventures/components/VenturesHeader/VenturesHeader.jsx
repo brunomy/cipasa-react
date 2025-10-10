@@ -42,10 +42,17 @@ function Filter() {
     { label: 'Pronto para construir', value: 'pronto' },
   ];
 
+  const typeList = [
+    { label: 'Comercial', value: 'comercial' },
+    { label: 'Incorporação', value: 'incorporacao' },
+    { label: 'Uso misto', value: 'uso-misto' },
+  ];
+
   const [filterOpen, setFilterOpen] = useState(false);
   const [filter, setFilter] = useState({
     status: null,
     state: null,
+    type: null,
   });
 
   return (
@@ -117,6 +124,27 @@ function Filter() {
               <TextField
                 {...params}
                 placeholder="Estado"
+                size="small"
+              />
+            )}
+          />
+        </Box>
+        <Box className="item">
+          <Autocomplete
+            disablePortal
+            options={typeList}
+            value={filter.type}
+            size="small"
+            onChange={(e, newValue) => {
+              if(!newValue){
+                setFilter({ ...filter, type: null }); return;
+              }
+              setFilter({ ...filter, type: newValue });
+            }}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                placeholder="Tipo"
                 size="small"
               />
             )}
