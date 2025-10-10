@@ -37,7 +37,7 @@ export default function Footer({ ref }) {
                 <h4>Mapa do site</h4>
                 <Button component={Link} to="/sobre">Empreendimentos</Button>
                 <Button component={Link} to="/servicos">Sobre nós</Button>
-                <Button component={Link} to="/contato">Tenho uma área </Button>
+                <Button component={Link} to="/tenho-uma-area">Tenho uma área </Button>
                 <Button component={Link} to="/contato">R.I</Button>
                 <Button component={Link} to="/contato">Contato</Button>
               </Box>

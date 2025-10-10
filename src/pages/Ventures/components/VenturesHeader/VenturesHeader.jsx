@@ -2,20 +2,23 @@ import './VenturesHeader.scss';
 import { useState, useEffect } from 'react';
 import { Box, Button, TextField, Autocomplete } from '@mui/material';
 import TitleBreadcrumbs from '../../../../components/TitleBreadcrumbs/TitleBreadcrumbs';
+import HeaderPadding from '../../../../components/HeaderPadding/HeaderPadding';
 
 
 
 export default function VenturesHeader() {
   return (
     <Box className="ventures_header" component="section">
-      <Box className="content">
-        <Box className="left">
-          <TitleBreadcrumbs title={<>Nossos <b>Empreendimentos</b></>} breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Nossos Empreendimentos' }]} />
+      <HeaderPadding>
+        <Box className="content">
+          <Box className="left">
+            <TitleBreadcrumbs title={<>Nossos <b>Empreendimentos</b></>} breadcrumbs={[{ label: 'Home', href: '/' }, { label: 'Nossos Empreendimentos' }]} />
+          </Box>
+          <Box className="right">
+            <Filter />
+          </Box>
         </Box>
-        <Box className="right">
-          <Filter />
-        </Box>
-      </Box>
+      </HeaderPadding>
     </Box>
   )
 }

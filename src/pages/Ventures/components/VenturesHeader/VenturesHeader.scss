@@ -2,7 +2,7 @@
 
 .ventures_header{
   position: relative;
-  padding: 80px 0 75px;
+  padding: 0 0 75px;
 
   &::before{
     content: '';
@@ -29,7 +29,7 @@
   }
 
   @media (max-width: 1100px){
-    padding: 55px 0 40px;
+    padding: 0 0 40px;
 
     .content{
       .right{
